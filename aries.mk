@@ -3,6 +3,10 @@ TARGET_DEVICE_BLOBS := vendor/sony/aries/aries-vendor-blobs.mk
 $(call inherit-product-if-exists, device/sony/shinano-common/device.mk)
 $(call inherit-product-if-exists, $(TARGET_DEVICE_BLOBS))
 
+TARGET_GCC_VERSION_EXP := 4.8
+COMMON_GLOBAL_CFLAGS += -Wno-unused-parameter
+TARGET_GLOBAL_CPPFLAGS += -Wno-unused-parameter -Wno-sizeof-pointer-memaccess
+
 # for Gecko
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.moz.has_home_button=0 \
